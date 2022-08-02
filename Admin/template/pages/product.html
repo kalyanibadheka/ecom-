@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+    <title>Skydash Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../vendors/feather/feather.css">
+    <link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="../js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="../css/all.min.css">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="../vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../images/favicon.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex
+                    align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="../index.html"><img src="../images/logo.svg" class="mr-2"
+                        alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="../index.html"><img src="../images/logo-mini.svg"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center
+                    justify-content-end">
+                <button class="navbar-toggler navbar-toggler
+                        align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                        <div class="input-group">
+                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                <span class="input-group-text" id="search">
+                                    <i class="icon-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="navbar-search-input" placeholder="Search
+                                    now" aria-label="search" aria-describedby="search">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                            data-toggle="dropdown">
+                            <i class="icon-bell mx-0"></i>
+                            <span class="count"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right
+                                navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                            <p class="mb-0 font-weight-normal float-left
+                                    dropdown-header">Notifications</p>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-success">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject
+                                            font-weight-normal">Application
+                                        Error</h6>
+                                    <p class="font-weight-light small-text
+                                            mb-0 text-muted">
+                                        Just now
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-warning">
+                                        <i class="ti-settings mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject
+                                            font-weight-normal">Settings</h6>
+                                    <p class="font-weight-light small-text
+                                            mb-0 text-muted">
+                                        Private message
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-info">
+                                        <i class="ti-user mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject
+                                            font-weight-normal">New user
+                                        registration</h6>
+                                    <p class="font-weight-light small-text
+                                            mb-0 text-muted">
+                                        2 days ago
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img src="../images/faces/face28.jpg" alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right
+                                navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item">
+                                <i class="ti-settings text-primary"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item nav-settings d-none d-lg-flex">
+                        <a class="nav-link" href="#">
+                            <i class="icon-ellipsis"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none
+                        align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_settings-panel.html -->
+            <div class="theme-setting-wrapper">
+                <div id="settings-trigger"><i class="ti-settings"></i></div>
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close ti-close"></i>
+                    <p class="settings-heading">SIDEBAR SKINS</p>
+                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                        <div class="img-ss rounded-circle bg-light border
+                                mr-3"></div>Light
+                    </div>
+                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                        <div class="img-ss rounded-circle bg-dark border
+                                mr-3"></div>Dark
+                    </div>
+                    <p class="settings-heading mt-2">HEADER SKINS</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- partial -->
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" style="background-color:
+                    #f3f0f0;" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="../pages/product.html" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="../pages/users.html" aria-expanded="false"
+                            aria-controls="form-elements">
+                            <i class="icon-columns menu-icon"></i>
+                            <span class="menu-title">Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="../pages/orders.html" aria-expanded="false"
+                            aria-controls="charts">
+                            <i class="icon-bar-graph menu-icon"></i>
+                            <span class="menu-title">Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false"
+                            aria-controls="tables">
+                            <i class="icon-grid-2 menu-icon"></i>
+                            <span class="menu-title">Admins</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- partial -->
+            <section class="w-100 mt-4">
+                <div class="container">
+                    <!-- <div class="d-flex justify-content-between">
+                            <a href="add_product.html" class="btn btn-success">
+                                <i class="fas fa-plus"></i>
+                                Add Product
+                            </a>
+                            <button type="button" class="btn btn-secondary"
+                                onclick="refresh()">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div> -->
+                    <div class="wraper d-flex flex-wrap">
+                        <div class="col-5">
+                            <form action="" onsubmit="return handleProduct()" class="mx-auto mt-4
+                                    bordered">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Add Product Form</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <input type="hidden" name="pid" id="pid">
+                                            <label>Product Name</label>
+                                            <input type="text" class="form-control" name="name" id="name"
+                                                placeholder="Product name">
+                                            <span class="err" id="nameErr"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Product price</label>
+                                            <input type="text" class="form-control" name="price" id="price"
+                                                placeholder="Product price">
+                                            <span class="err" id="priceErr"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Product description</label>
+                                            <input type="text" class="form-control" name="desc" id="desc" placeholder="Product description">
+                                            <span class="err" id="descErr"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Product photo</label>
+                                            <input type="text" class="form-control" name="photo" id="photo"
+                                                placeholder="Product photo">
+                                            <span class="err" id="photoErr"></span>
+                                        </div>
+
+                                    </div>
+                                    <div class="card-footer">
+                                        <input type="submit" value="Submit" class="btn w-100 btn-success">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-6 mt-3" id="tbl">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="../vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../vendors/chart.js/Chart.min.js"></script>
+    <script src="../vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="../vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="../js/dataTables.select.min.js"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../js/off-canvas.js"></script>
+    <script src="../js/hoverable-collapse.js"></script>
+    <script src="../js/template.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/Chart.roundedBarCharts.js"></script>
+
+    <!-- End custom js for this page-->
+
+
+    <script type="text/javascript">
+        let update = false
+        function handleProduct() {
+            let name = document.getElementById("name").value;
+            let desc = document.getElementById("desc").value;
+            let price = document.getElementById("price").value;
+            let photo = document.getElementById("photo").value;
+
+            let data = {
+                name,
+                desc,
+                price,
+                photo
+            }
+
+            if (validate()) {
+                if(update){
+                    updateProduct();
+                }else{
+                    insertProduct(data);
+                }
+            } else {
+                return false
+            }
+
+        }
+        function insertProduct(data) {
+            let localData = JSON.parse(localStorage.getItem("product"));
+            let id = Math.floor(Math.random() * 1000);
+
+            let obj = {
+                id: id,
+                name: data.name,
+                desc: data.desc,
+                price: data.price,
+                photo: data.photo
+            }
+
+            if (validate()) {
+                if (localData === null) {
+                    localStorage.setItem("product", JSON.stringify([obj]));
+                } else {
+                    localData.push(obj);
+                    localStorage.setItem("product", JSON.stringify(localData));
+                }
+            }
+
+        }
+        function validate() {
+            let name = document.getElementById("name").value;
+            let desc = document.getElementById("desc").value;
+            let price = document.getElementById("price").value;
+            let photo = document.getElementById("photo").value;
+
+            let nameE = descE = priceE = photoE = true;
+
+            if (name === '') {
+                document.getElementById("nameErr").innerHTML = "Please enter the product name";
+            } else {
+                nameE = false
+                document.getElementById("nameErr").innerHTML = "";
+            }
+
+            if (desc === '') {
+                document.getElementById("descErr").innerHTML = "Please enter the product desc";
+            } else {
+                descE = false
+                document.getElementById("descErr").innerHTML = "";
+            }
+
+            if (price === '') {
+                document.getElementById("priceErr").innerHTML = "Please enter the product price";
+            } else {
+                priceE = false
+                document.getElementById("priceErr").innerHTML = "";
+            }
+
+            if (photo === '') {
+                document.getElementById("photoErr").innerHTML = "Please enter the product photo";
+            } else {
+                photoE = false
+                document.getElementById("photoErr").innerHTML = "";
+            }
+
+            if ((nameE || descE || priceE || photoE) === true) {
+                return false
+            } else {
+                return true
+            }
+
+        }
+
+        function handleEdit(id) {
+            let localData = JSON.parse(localStorage.getItem("product"));
+            let fData = localData.filter((l) => l.id === id);
+
+            let name = document.getElementById("name").value = fData[0].name;
+            let price = document.getElementById("price").value = fData[0].price;
+            let desc = document.getElementById("desc").value = fData[0].desc;
+            let photo = document.getElementById("photo").value = fData[0].photo;
+            let pid = document.getElementById("pid").value = fData[0].id;
+
+            let cartData = JSON.parse(localStorage.getItem("cart"));
+            let cData = cartData.filter((l) => l.id === id);
+
+            document.getElementById("name").value = cData[0].name;
+            document.getElementById("price").value = cData[0].price;
+            document.getElementById("desc").value = cData[0].desc;
+            document.getElementById("photo").value = cData[0].photo;
+            document.getElementById("pid").value = cData[0].id;
+
+            update = true
+        }
+        function updateProduct(){
+            let id = document.getElementById("pid").value;
+            let name = document.getElementById("name").value;
+            let desc = document.getElementById("desc").value;
+            let price = document.getElementById("price").value;
+            let photo = document.getElementById("photo").value;
+
+            let data = {
+                id : parseInt(id),
+                name,
+                desc,
+                price,
+                photo
+            }
+
+            let localData = JSON.parse(localStorage.getItem("product"));
+
+            let uData = localData.map((l)=>{
+                if(l.id === parseInt(id)){
+                    return data;
+                }else{
+                    return l;
+                }
+            })
+
+            localStorage.setItem("product",JSON.stringify(uData));
+
+            let cartData = JSON.parse(localStorage.getItem("cart"));
+
+            let cData = cartData.map((l) => {
+                if(l.id === parseInt(id)){
+                    return data;
+                }else{
+                    return l;
+                }
+            })
+
+            localStorage.setItem("cart",JSON.stringify(cData));
+            
+            update = false
+        }
+
+        function getProduct() {
+            let localData = JSON.parse(localStorage.getItem("product"));
+
+            let text = '';
+            text += '<table class="table table-bordered table-hover text-center"><thead><th>#</th><th>Image</th><th>Description</th><th>Action</th></thead><tbody>';
+            localData.map((l, i) => {
+                let j = i + 1;
+                text = text + '<tr><td>' + j + '</td><td><img style="width:80px; height:80px; border-radius:0%" src="imgs/' + l.photo + '"/></td><td><p>Name : ' + l.name + '</p><p>Price: ' + l.price + '</p></td>';
+                text += '<td><a href="#" class="btn btn-primary mr-2" onclick="handleEdit(' + l.id + ')">Edit</a>';
+                text += '<a href="#" class="btn btn-danger" onclick="handleDelete(' + l.id + ')">Delete</a></td></tr>';
+            })
+            text = text + '</tbody></table>'
+            document.getElementById("tbl").innerHTML = text;
+        }
+        window.onload = getProduct;
+
+        function refresh() {
+            location.reload();
+        }
+
+        function handleDelete(id) {
+            let localData = JSON.parse(localStorage.getItem("product"));
+
+            let fData = localData.filter((l) => l.id !== id);
+
+            localStorage.setItem("product", JSON.stringify(fData));
+
+            let cartData = JSON.parse(localStorage.getItem("cart"));
+
+            let cData = cartData.filter((l) => l.id !== id);
+
+            localStorage.setItem("cart", JSON.stringify(cData));
+
+            location.reload();
+        }
+
+    </script>
+</body>
+
+</html>
